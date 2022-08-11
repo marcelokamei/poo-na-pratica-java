@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 
+import br.marcelokamei.dominio.Conteudo;
 import br.marcelokamei.dominio.Curso;
 import br.marcelokamei.dominio.Mentoria;
 
@@ -17,6 +18,9 @@ public class App {
         mentoria1.setDescricao("Mentoria sobre POO com JAVA");
         mentoria1.setTitulo("Mentoria POO Java");
         System.out.println(mentoria1);
+
+        Conteudo conteudo = new Curso();
+        
 
     }
 }
