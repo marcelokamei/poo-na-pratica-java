@@ -16,20 +16,17 @@ public class Dev {
     };
 
     public void progredir() {
-        Optional<Conteudo> conteudo =  this.conteudosInscritos.stream().findFirst();
+        Optional<Conteudo> conteudo = this.conteudosInscritos.stream().findFirst();
         if(conteudo.isPresent()){
             this.conteudosConcluidos.add(conteudo.get());
-            this.conteudosConcluidos.remove(conteudo.get());
+            this.conteudosInscritos.remove(conteudo.get());
         } else {
-            System.err.println("Você não está matriculado em nenhum conteúdo");
+            System.err.println("Você não está matriculado em nenhum conteúdo!");
         }
     };
 
     public double calcularTotalXp() {
-       return this.conteudosConcluidos
-                .stream()
-                .mapToDouble(Conteudo::calcularXp)
-                .sum();
+       return this.conteudosConcluidos.stream().mapToDouble(conteudo -> conteudo.calcularXp()).sum();
     }
 
     public String getNome() {
